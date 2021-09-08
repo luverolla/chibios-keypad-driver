@@ -47,23 +47,38 @@ typedef struct
 void kpInit(Keypad* obj);
 
 /**
- * Enable the i-th row of keypad
+ * Enable the k-th row of keypad
  *
+ * Disables all other rows
  * Indeces count starts from zero.
  * Returns immediately if index goes over rows array's size
  *
  * @param *obj Pointer to configuration object
  */
-void kpEnableRow(Keypad* obj, uint8_t i);
+void kpEnableRow(Keypad* obj, uint32_t k);
 
 /**
  * Read key pressed by user, as char.
  *
- * If no key is pressed, then returns @KEYPAD_NOCHAR
+ * If key is pressed, stores position in pointers passed as arguments.
+ * If no key is pressed, then returns #KEYPAD_NOCHAR, and pointers are null
+ *
+ * @param *obj Pointer to configuration object
+ * @param *m Pointer to row position
+ * @param *n Pointer to column position
+ *
+ * @returns char related to pressed key, or #KEYPAD_NOCHAR
+ */
+uint8_t kpRead(Keypad* obj, uint32_t* m, uint32_t* n);
+
+/**
+ * Read key pressed by user, as char.
+ *
+ * If no key is pressed, then returns #KEYPAD_NOCHAR
  *
  * @param *obj Pointer to configuration object
  *
- * @returns chars related to pressed key, or @KEYPAD_NOCHAR
+ * @returns char related to pressed key, or #KEYPAD_NOCHAR
  */
 uint8_t kpRead(Keypad* obj);
 

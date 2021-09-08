@@ -24,6 +24,11 @@ and include the driver makefile in the project global makefile, as shown below:
 include ./$(PATH_TO_KEYPAD)/keypad.mk
 ```
 
+The makefile is configured so that `$(PATH_TO_KEYPAD)` is `./keypad`.
+If you plan to place folder to other path, change the makefile accordingly.
+
+And, as obvious, you must include the `keypad.h` file.
+
 ## Legal notes
 
 This project is released under the [Apache 2.0 License](http://www.apache.org/licenses/LICENSE-2.0.html)

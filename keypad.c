@@ -12,7 +12,7 @@ void kpInit(Keypad* obj)
       palSetLineMode(obj->cols[j], PAL_MODE_INPUT_PULLDOWN);
 }
 
-void kpEnableRow(Keypad* obj, uint8_t k)
+void kpEnableRow(Keypad* obj, uint32_t k)
 {
   int nr = sizeof(obj->rows) / sizeof(ioline_t);
 
@@ -21,6 +21,29 @@ void kpEnableRow(Keypad* obj, uint8_t k)
 
   for(int i = 0; i < nr; i++)
     palWriteLine(obj->rows[i], i == k);
+}
+
+uint8_t kpRead(Keypad* obj, uint32_t* m, uint32_t* n)
+{
+  int nr = sizeof(obj->rows) / sizeof(ioline_t),
+      nc = sizeof(obj->cols) / sizeof(ioline_t);
+
+  for(int i = 0; i < nr; i++)
+  {
+    kpEnableRow(i);
+
+    for(int j = 0; j < nc; j++)
+    {
+      if(palReadLine(obj->cols[j]))
+      {
+        *m = i;
+        *n = j;
+        return obj->chars[i][j];
+      }
+    }
+  }
+
+  return KEYPAD_NOCHAR;
 }
 
 uint8_t kpRead(Keypad* obj)
