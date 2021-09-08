@@ -87,8 +87,10 @@ Macros</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a937734540fe145102ce694772b4446b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="keypad_8h.html#a937734540fe145102ce694772b4446b8">kpInit</a> (<a class="el" href="struct_keypad.html">Keypad</a> *obj)</td></tr>
 <tr class="separator:a937734540fe145102ce694772b4446b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3226ef1749d996ff2a1d1fb86942cfcb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="keypad_8h.html#a3226ef1749d996ff2a1d1fb86942cfcb">kpEnableRow</a> (<a class="el" href="struct_keypad.html">Keypad</a> *obj, uint8_t i)</td></tr>
-<tr class="separator:a3226ef1749d996ff2a1d1fb86942cfcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dde648216809e20f0bb408212733f41"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="keypad_8h.html#a0dde648216809e20f0bb408212733f41">kpEnableRow</a> (<a class="el" href="struct_keypad.html">Keypad</a> *obj, uint32_t k)</td></tr>
+<tr class="separator:a0dde648216809e20f0bb408212733f41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4abc805e9c8432dd9223d4cb08d6b8d"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="keypad_8h.html#ad4abc805e9c8432dd9223d4cb08d6b8d">kpRead</a> (<a class="el" href="struct_keypad.html">Keypad</a> *obj, uint32_t *m, uint32_t *n)</td></tr>
+<tr class="separator:ad4abc805e9c8432dd9223d4cb08d6b8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af88e0b686f33df3685eaca4d3d5da498"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="keypad_8h.html#af88e0b686f33df3685eaca4d3d5da498">kpRead</a> (<a class="el" href="struct_keypad.html">Keypad</a> *obj)</td></tr>
 <tr class="separator:af88e0b686f33df3685eaca4d3d5da498"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -119,8 +121,8 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a3226ef1749d996ff2a1d1fb86942cfcb" name="a3226ef1749d996ff2a1d1fb86942cfcb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3226ef1749d996ff2a1d1fb86942cfcb">&#9670;&nbsp;</a></span>kpEnableRow()</h2>
+<a id="a0dde648216809e20f0bb408212733f41" name="a0dde648216809e20f0bb408212733f41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dde648216809e20f0bb408212733f41">&#9670;&nbsp;</a></span>kpEnableRow()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -134,8 +136,8 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>i</em>&#160;</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>k</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -144,8 +146,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Enable the i-th row of keypad</p>
-<p >Indeces count starts from zero. Returns immediately if index goes over rows array's size</p>
+<p >Enable the k-th row of keypad</p>
+<p >Disables all other rows Indeces count starts from zero. Returns immediately if index goes over rows array's size</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">*obj</td><td>Pointer to configuration object </td></tr>
@@ -181,7 +183,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 <a id="af88e0b686f33df3685eaca4d3d5da498" name="af88e0b686f33df3685eaca4d3d5da498"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af88e0b686f33df3685eaca4d3d5da498">&#9670;&nbsp;</a></span>kpRead()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af88e0b686f33df3685eaca4d3d5da498">&#9670;&nbsp;</a></span>kpRead() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -196,14 +198,59 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p >Read key pressed by user, as char.</p>
-<p >If no key is pressed, then returns @KEYPAD_NOCHAR</p>
+<p >If no key is pressed, then returns <a class="el" href="keypad_8h.html#a3fe5509e54d68dc30c9c37a40b81ce5b">KEYPAD_NOCHAR</a></p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">*obj</td><td>Pointer to configuration object</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>chars related to pressed key, or @KEYPAD_NOCHAR </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>char related to pressed key, or <a class="el" href="keypad_8h.html#a3fe5509e54d68dc30c9c37a40b81ce5b">KEYPAD_NOCHAR</a> </dd></dl>
+
+</div>
+</div>
+<a id="ad4abc805e9c8432dd9223d4cb08d6b8d" name="ad4abc805e9c8432dd9223d4cb08d6b8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4abc805e9c8432dd9223d4cb08d6b8d">&#9670;&nbsp;</a></span>kpRead() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t kpRead </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_keypad.html">Keypad</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Read key pressed by user, as char.</p>
+<p >If key is pressed, stores position in pointers passed as arguments. If no key is pressed, then returns <a class="el" href="keypad_8h.html#a3fe5509e54d68dc30c9c37a40b81ce5b">KEYPAD_NOCHAR</a>, and pointers are null</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">*obj</td><td>Pointer to configuration object </td></tr>
+    <tr><td class="paramname">*m</td><td>Pointer to row position </td></tr>
+    <tr><td class="paramname">*n</td><td>Pointer to column position</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>char related to pressed key, or <a class="el" href="keypad_8h.html#a3fe5509e54d68dc30c9c37a40b81ce5b">KEYPAD_NOCHAR</a> </dd></dl>
 
 </div>
 </div>

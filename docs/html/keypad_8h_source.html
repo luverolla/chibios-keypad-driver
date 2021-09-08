@@ -82,14 +82,16 @@ $(function() {
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keywordtype">void</span> <a class="code hl_function" href="keypad_8h.html#a937734540fe145102ce694772b4446b8">kpInit</a>(<a class="code hl_struct" href="struct_keypad.html">Keypad</a>* obj);</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keywordtype">void</span> <a class="code hl_function" href="keypad_8h.html#a3226ef1749d996ff2a1d1fb86942cfcb">kpEnableRow</a>(<a class="code hl_struct" href="struct_keypad.html">Keypad</a>* obj, uint8_t i);</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>uint8_t <a class="code hl_function" href="keypad_8h.html#af88e0b686f33df3685eaca4d3d5da498">kpRead</a>(<a class="code hl_struct" href="struct_keypad.html">Keypad</a>* obj);</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">#endif </span><span class="comment">/* KEYPAD_H_ */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="akeypad_8h_html_a3226ef1749d996ff2a1d1fb86942cfcb"><div class="ttname"><a href="keypad_8h.html#a3226ef1749d996ff2a1d1fb86942cfcb">kpEnableRow</a></div><div class="ttdeci">void kpEnableRow(Keypad *obj, uint8_t i)</div><div class="ttdef"><b>Definition:</b> keypad.c:15</div></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keywordtype">void</span> <a class="code hl_function" href="keypad_8h.html#a0dde648216809e20f0bb408212733f41">kpEnableRow</a>(<a class="code hl_struct" href="struct_keypad.html">Keypad</a>* obj, uint32_t k);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>uint8_t <a class="code hl_function" href="keypad_8h.html#ad4abc805e9c8432dd9223d4cb08d6b8d">kpRead</a>(<a class="code hl_struct" href="struct_keypad.html">Keypad</a>* obj, uint32_t* m, uint32_t* n);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>uint8_t <a class="code hl_function" href="keypad_8h.html#ad4abc805e9c8432dd9223d4cb08d6b8d">kpRead</a>(<a class="code hl_struct" href="struct_keypad.html">Keypad</a>* obj);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="preprocessor">#endif </span><span class="comment">/* KEYPAD_H_ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="akeypad_8h_html_a0dde648216809e20f0bb408212733f41"><div class="ttname"><a href="keypad_8h.html#a0dde648216809e20f0bb408212733f41">kpEnableRow</a></div><div class="ttdeci">void kpEnableRow(Keypad *obj, uint32_t k)</div><div class="ttdef"><b>Definition:</b> keypad.c:15</div></div>
 <div class="ttc" id="akeypad_8h_html_a937734540fe145102ce694772b4446b8"><div class="ttname"><a href="keypad_8h.html#a937734540fe145102ce694772b4446b8">kpInit</a></div><div class="ttdeci">void kpInit(Keypad *obj)</div><div class="ttdef"><b>Definition:</b> keypad.c:3</div></div>
-<div class="ttc" id="akeypad_8h_html_af88e0b686f33df3685eaca4d3d5da498"><div class="ttname"><a href="keypad_8h.html#af88e0b686f33df3685eaca4d3d5da498">kpRead</a></div><div class="ttdeci">uint8_t kpRead(Keypad *obj)</div><div class="ttdef"><b>Definition:</b> keypad.c:26</div></div>
+<div class="ttc" id="akeypad_8h_html_ad4abc805e9c8432dd9223d4cb08d6b8d"><div class="ttname"><a href="keypad_8h.html#ad4abc805e9c8432dd9223d4cb08d6b8d">kpRead</a></div><div class="ttdeci">uint8_t kpRead(Keypad *obj, uint32_t *m, uint32_t *n)</div><div class="ttdef"><b>Definition:</b> keypad.c:26</div></div>
 <div class="ttc" id="astruct_keypad_html"><div class="ttname"><a href="struct_keypad.html">Keypad</a></div><div class="ttdef"><b>Definition:</b> keypad.h:36</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
